@@ -1,0 +1,16 @@
+sequenceDiagram
+    participant M as Main
+    participant U as User
+    participant R as Report
+    M->>U: create user(education, qualifications, english_levels)
+    U->>M: return user
+    M->>R: create report(user)
+    R->>M: return report
+    M->>R: generate report
+    R->>M: return generated report
+    M->>R: save report
+    M->>R: print report
+    M->>U: update user info(education, qualifications, english_levels)
+    U->>M: return updated user
+    M->>R: regenerate report(updated user)
+    R->>M: return regenerated report
